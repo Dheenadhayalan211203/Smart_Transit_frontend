@@ -49,9 +49,9 @@ const Counters = () => {
     const handlebook = async (e) => {
         
         try {
-            const response = await axios.post(" https://smarttransitapi24-1.onrender.com/counter", { source, destination, email, routeno });
-            console.log(response.data);
-            navigate("/ticketbooked");
+            const response = await axios.post(" http://localhost:5000/counter", { source, destination, email, routeno });
+            const {qrCode}=response.data
+            navigate("/ticketbooked",{state:{qrCode}});
 
         } catch (error) {
             console.error("Error booking ticket:", error);
