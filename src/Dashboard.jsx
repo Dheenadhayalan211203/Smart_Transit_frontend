@@ -8,7 +8,7 @@ const Dashboard = () => {
     async function fetchData() {
       try {
         const response = await axios.get(
-          "https://smart-india.onrender.com/min-distance"
+          "https://smarttransitapi24-1.onrender.com/min-distance"
         );
         console.log(response.data); // Check the structure of the response
         setmapdata(response.data); // Assuming the response is the array of objects you need
